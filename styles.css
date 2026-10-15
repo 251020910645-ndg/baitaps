@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf8f5;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*Skip Link ẩn, hiện khi nhấn Tab (:focus) */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 10px;
+    background-color: #d32f2f;
+    color: #ffffff;
+    padding: 10px 15px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/*Thanh điều hướng dùng Flexbox + 3 thuộc tính CSS */
+nav {
+    background-color: #d19eeb;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/*Lớp giả :hover */
+nav a:hover {
+    color: #ffeb3b;
+}
+
+header h1 {
+    text-align: center;
+    color: #935991;
+    margin: 25px 0 15px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+img {
+    width: 100%;     
+    height: 220px;      
+    object-fit: cover;    
+    border: 3px solid #e0e0e0;
+    padding: 6px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Ảnh trang chủ căn giữa, dùng tỉ lệ 16:9 rõ nét & cân đối */
+#main-content > figure {
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#main-content > figure img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/*Hiệu ứng :hover cho hình ảnh */
+img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Bố cục Grid 2 cột trở lên */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.grid-container figure {
+    margin: 0;
+    text-align: center;
+}
+
+/*Bố cục Flexbox */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.flex-container figure {
+    margin: 0;
+    text-align: center;
+    width: 260px; 
+}
+
+/*Bộ chọn :nth-child điều chỉnh bo góc ảnh */
+.flex-container figure:nth-child(odd) img {
+    border-radius: 40px 10px 40px 10px;
+    border-color: #d19eeb;
+}
+
+.flex-container figure:nth-child(even) img {
+    border-radius: 10px 40px 10px 40px;
+    border-color: #935991;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eeeeee;
+    margin-top: auto;
+    font-size: 1em;
+}

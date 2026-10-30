@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Ẩm Thực Việt Nam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #FAF8F5;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #5C2C16;
+        }
+
+        /* Khung hiển thị lớn */
+        #image {
+            width: 100%;
+            max-width: 650px;
+            height: 380px;
+            border: 2px solid #5C2C16;
+            margin: 20px auto;
+            background-color: #EFECE6;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Khung nền trắng chứa dòng chữ tiêu đề */
+        #image-text {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .preview-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .preview {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .preview:hover, .preview:focus {
+            transform: scale(1.05);
+            border-color: #5C2C16;
+            outline: 3px solid #E9A520;
+        }
+    </style>
+</head>
+
+<body onload="initializeGallery()">
+    <header>
+        <h1>Khám Phá Ẩm Thực Việt Nam</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Đây là những món ăn truyền thống nổi tiếng của Việt Nam:</h2>
+            <ul>
+                <li>Phở bò</li>
+                <li>Bánh chưng</li>
+                <li>Bún chả</li>
+                <li>Bánh mì</li>
+                <li>Nem rán</li>
+                <li>Cơm tấm</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Một số hình ảnh về các món ăn truyền thống:</h2>
+            
+            <div id="image">
+                <div id="image-text">Di chuột hoặc dùng phím Tab qua một hình ảnh bên dưới để hiển thị ở đây.</div>
+            </div>
+            <div class="preview-container">
+                <img class="preview" 
+                     src="https://vnaroma.com/wp-content/uploads/2020/11/nau-pho-bo-voi-gia-vi-bot-huong-bo-01.jpg" 
+                     alt="Phở bò truyền thống" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="unDo()"
+                     onfocus="upDate(this)" 
+                     onblur="unDo()">
+
+                <img class="preview" 
+                     src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2024/1/15/photo-1705306400107-17053064045771902705729.jpeg" 
+                     alt="Bánh chưng ngày Tết" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="unDo()"
+                     onfocus="upDate(this)" 
+                     onblur="unDo()">
+
+                <img class="preview" 
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8EoMvMmNVBJ2GxHFy499Xei9bJvTEnvFVSMpzipfX_1hfk6OtNbziWZHx&s=10" 
+                     alt="Bún chả Hà Nội" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="unDo()"
+                     onfocus="upDate(this)" 
+                     onblur="unDo()">
+
+                <img class="preview" 
+                     src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/banh_mi_man_3051eb6d27.jpg" 
+                     alt="Bánh mì Sài Gòn" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="unDo()"
+                     onfocus="upDate(this)" 
+                     onblur="unDo()">
+
+                <img class="preview" 
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3nopH29uPyvhuNKZUJirfVwZRd4bNfrNrhVFCuILHPkXSFDIIweHivs&s=10" 
+                     alt="Nem rán " 
+                     onmouseover="upDate(this)" 
+                     onmouseout="unDo()"
+                     onfocus="upDate(this)" 
+                     onblur="unDo()">
+
+                <img class="preview" 
+                     src="https://static.vinwonders.com/production/com-tam-sai-gon-thumb.jpg" 
+                     alt="Cơm tấm Sài Gòn" 
+                     onmouseover="upDate(this)" 
+                     onmouseout="unDo()"
+                     onfocus="upDate(this)" 
+                     onblur="unDo()">
+            </div>
+        </section>
+    </main>
+    <script src="script1.js"></script>
+</body>
+</html>
